@@ -46,7 +46,6 @@ public class Club {
 			for(Map.Entry<String, Evento>prueba:this.competencias.entrySet()) {
 			if(prueba.getKey().equals(clave)) {
 				prueba.getValue().agregarParticipante(celeste, celeste.getNumeroDeSocio());
-			    System.out.println("mierda");
 				return ((Integer)1);
 			}
 		}
@@ -61,11 +60,17 @@ public class Club {
 			}
 		}
 		
-		
-		
-		
-		
-		
+//		for(Map.Entry<String, Evento>prueba:this.competencias.entrySet()) {
+//			if(prueba.getKey().equals(clave)) {
+//				if(  prueba.getValue().equals(TipoDeEvento.CARRERA_5K) ||  prueba.getValue().equals(TipoDeEvento.CARRERA_10K) || prueba.getValue().equals(TipoDeEvento.CARRERA_21K)) {
+//					if(celeste instanceof Corredor){
+//		                   prueba.getValue().agregarParticipante(celeste, celeste.getNumeroDeSocio());
+//		               return ((Integer)1);
+//		            }
+//				}
+//			   
+//			}
+//		}
 		
 		
 		
