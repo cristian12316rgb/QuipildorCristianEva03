@@ -6,6 +6,7 @@ import java.util.Map;
 import java.util.Set;
 
 import ar.edu.unlam.pb2.eva03.enumeradores.TipoDeEvento;
+import ar.edu.unlam.pb2.eva03.interfaces.ICorredor;
 import ar.edu.unlam.pb2.eva03.interfaces.INadador;
 
 public class Club {
@@ -41,14 +42,34 @@ public class Club {
 	public Integer inscribirEnEvento(String clave, Deportista celeste) throws NoEstaPreparado {
 		
 		
-		if(celeste instanceof INadador) {
+		if((clave.equals("Triatlon Khona" )|| clave.equals("Maraton de aguas abiertas"))) {
 			for(Map.Entry<String, Evento>prueba:this.competencias.entrySet()) {
 			if(prueba.getKey().equals(clave)) {
 				prueba.getValue().agregarParticipante(celeste, celeste.getNumeroDeSocio());
-			    return ((Integer)1);
+			    System.out.println("mierda");
+				return ((Integer)1);
 			}
 		}
+		}else {
+			if((celeste instanceof ICorredor) && (clave.equals("Maraton de New York"))) {
+				for(Map.Entry<String, Evento>prueba:this.competencias.entrySet()) {
+					if(prueba.getKey().equals(clave)) {
+						prueba.getValue().agregarParticipante(celeste, celeste.getNumeroDeSocio());
+					   return ((Integer)1);
+					}
+				}
+			}
 		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		throw new NoEstaPreparado("no se puede");
 		
